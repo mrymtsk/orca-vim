@@ -6,6 +6,10 @@
 " Description: Vim syntax file for ORCA
 " SeeAlso: https://orcaforum.kofo.mpg.de/
 
+if exists("b:current_syntax")
+  finish
+endif
+
 setlocal iskeyword+=-,/,%,+,*,(,)
 syn case ignore
 
@@ -114,3 +118,5 @@ hi def link orcaComment Comment
 hi def link orcaLineComment orcaComment
 hi def link orcaEmbeddedComment orcaComment
 " }}}
+
+let b:current_syntax = "gitconfig"
