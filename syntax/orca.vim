@@ -6,11 +6,11 @@
 " Description: Vim syntax file for ORCA
 " SeeAlso: https://orcaforum.kofo.mpg.de/
 
-setlocal iskeyword+=-,/,%,+,*
+setlocal iskeyword+=-,/,%,+,*,(,)
 syn case ignore
 
 " Input Block {{{
-syn region orcaInputBlock matchgroup=orcaInputBlockMarker start=/^%\(autoci\|basis\|casscf\|cipsi\|cis\|cim\|coords\|cpcm\|elprop\|eprnmr\|freq\|geom\|irc\|loc\|md\|mdci\|method\|mp2\|mrci\|mrcc\|numgrad\|nbo\|output\|pal\|paras\|rel\|plots\|rocis\|rr\|scf\)/ end=/^end$/ contains=orcaLineComment,orcaEmbeddedComment,orcaInputBlockVariable,orcaBlockInsideInputBlock transparent
+syn region orcaInputBlock matchgroup=orcaInputBlockMarker start=/^% *\(autoci\|basis\|casscf\|cipsi\|cis\|cim\|coords\|cpcm\|elprop\|eprnmr\|freq\|geom\|irc\|loc\|md\|mdci\|method\|mp2\|mrci\|mrcc\|numgrad\|nbo\|output\|pal\|paras\|rel\|plots\|rocis\|rr\|scf\)/ end=/^end$/ contains=orcaLineComment,orcaEmbeddedComment,orcaInputBlockVariable,orcaBlockInsideInputBlock transparent
 
 syn keyword orcaInputBlockVariable contained
   \ maxiter
@@ -26,13 +26,14 @@ syn keyword orcaInputBlockVariable contained
   \ guess
   \ moinp
   \ optimizehydrogens
+  \ density
 syn match orcaInputBlockVariable /print *\[[^\[\]]*\]/ contained
 
 hi def link orcaInputBlockMarker Function
 hi def link orcaInputBlockVariable Identifier
 
 " Block Inside Input Block {{{
-syn region orcaBlockInsideInputBlock matchgroup=orcaInputBlockMarker start=/^\(constraints\)/ end=/^end$/ contained transparent
+syn region orcaBlockInsideInputBlock matchgroup=orcaInputBlockMarker start=/^ *\(constraints\|scan\)/ end=/^ *end$/ contained transparent
 
 " }}}
 " }}}
@@ -99,6 +100,8 @@ syn keyword orcaKeywordLineKeyword contained
   \ 6-31g**
   \ autoaux
   \ xyzfile
+  \ dlpno-ccsd(t)
+  \ tightpno
 
 hi def link orcaKeywordLineKeyword Identifier
 " }}}
