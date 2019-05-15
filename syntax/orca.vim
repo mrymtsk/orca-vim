@@ -17,20 +17,20 @@ syn case ignore
 syn region orcaInputBlock matchgroup=orcaInputBlockMarker start=/^% *\(autoci\|basis\|casscf\|cipsi\|cis\|cim\|coords\|cpcm\|elprop\|eprnmr\|freq\|geom\|irc\|loc\|md\|mdci\|method\|mp2\|mrci\|mrcc\|numgrad\|nbo\|output\|pal\|paras\|rel\|plots\|rocis\|rr\|scf\)/ end=/^end$/ contains=orcaLineComment,orcaEmbeddedComment,orcaInputBlockVariable,orcaBlockInsideInputBlock transparent
 
 syn keyword orcaInputBlockVariable contained
-  \ maxiter
+  \ density
   \ diismaxeq
   \ directresetfreq
-  \ nprocs
-  \ guessmode
-  \ nlb
-  \ inithess
-  \ hess_filename
-  \ scale_init_displ
-  \ nbokeylist
   \ guess
+  \ guessmode
+  \ hess_filename
+  \ inithess
+  \ maxiter
   \ moinp
+  \ nbokeylist
+  \ nlb
+  \ nprocs
   \ optimizehydrogens
-  \ density
+  \ scale_init_displ
 syn match orcaInputBlockVariable /print *\[[^\[\]]*\]/ contained
 
 hi def link orcaInputBlockMarker Function
@@ -67,45 +67,44 @@ syn region orcaKeywordLine matchgroup=orcaKeywordLineMarker start=/^!/ end=/$/ t
 hi def link orcaKeywordLineMarker Function
 
 syn keyword orcaKeywordLineKeyword contained
-  \ b97-3c
-  \ opt
-  \ optts
-  \ numfreq
-  \ def2/j
-  \ slowconv
-  \ wb97x
-  \ nl
-  \ def2-qzvpp
-  \ def2/j
-  \ rijcosx
-  \ sp
-  \ grid5
-  \ finalgrid6
-  \ uks
-  \ moread
-  \ nolshift
-  \ nodamp
-  \ irc
-  \ rhf
   \ 6-311++g**
-  \ nbo
-  \ normalprint
-  \ pwpb95
-  \ d4
-  \ def2-tzvp
-  \ tightscf
-  \ def2-tzvp/c
-  \ numgrad
-  \ def2-tzvpp
-  \ def2-tzvpp/c
-  \ pbeh-3c
-  \ freq
-  \ pbe
   \ 6-31g**
   \ autoaux
-  \ xyzfile
+  \ b97-3c
+  \ d4
+  \ def2-qzvpp
+  \ def2-tzvp
+  \ def2-tzvp/c
+  \ def2-tzvpp
+  \ def2-tzvpp/c
+  \ def2/j
   \ dlpno-ccsd(t)
+  \ finalgrid6
+  \ freq
+  \ grid5
+  \ irc
+  \ moread
+  \ nbo
+  \ nl
+  \ nodamp
+  \ nolshift
+  \ normalprint
+  \ numfreq
+  \ numgrad
+  \ opt
+  \ optts
+  \ pbe
+  \ pbeh-3c
+  \ pwpb95
+  \ rhf
+  \ rijcosx
+  \ slowconv
+  \ sp
   \ tightpno
+  \ tightscf
+  \ uks
+  \ wb97x
+  \ xyzfile
 
 hi def link orcaKeywordLineKeyword Identifier
 " }}}
