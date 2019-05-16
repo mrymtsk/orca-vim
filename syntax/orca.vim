@@ -10,7 +10,7 @@ if exists("b:current_syntax")
   finish
 endif
 
-setlocal iskeyword+=-,/,%,+,*,(,)
+setlocal iskeyword+=-,/,%,+,*,(,),,
 syn case ignore
 
 " Input Block {{{
@@ -68,41 +68,94 @@ hi def link orcaKeywordLineMarker Function
 
 syn keyword orcaKeywordLineKeyword contained
   \ 6-311++g**
+  \ 6-31g*
   \ 6-31g**
+  \ allpop
   \ autoaux
+  \ b3lyp
   \ b97-3c
+  \ bhlyp
+  \ bp
+  \ bp86
+  \ cc-pvtz
+  \ conv
+  \ cpcm
+  \ cpcm(thf)
+  \ d3bj
   \ d4
+  \ def2-qzvp
+  \ def2-qzvp/c
   \ def2-qzvpp
+  \ def2-qzvppd
+  \ def2-sv(p)
+  \ def2-svp
+  \ def2-svp/c
   \ def2-tzvp
   \ def2-tzvp/c
   \ def2-tzvpp
   \ def2-tzvpp/c
   \ def2/j
+  \ def2/jk
   \ dlpno-ccsd(t)
+  \ extrapolate(2/3,def2)
+  \ extrapolate(2/3/4,def2)
   \ finalgrid6
   \ freq
+  \ grid4
   \ grid5
+  \ gridx5
+  \ hf-3c
   \ irc
+  \ largeprint
+  \ loosepno
   \ moread
   \ nbo
+  \ nevpt2
   \ nl
   \ nodamp
+  \ nofinalgrid
+  \ noiter
   \ nolshift
+  \ nopop
   \ normalprint
+  \ nososcf
+  \ npa
+  \ nrscf
   \ numfreq
   \ numgrad
   \ opt
   \ optts
+  \ pal4
+  \ patom
   \ pbe
+  \ pbe0
   \ pbeh-3c
+  \ printbasis
+  \ printgap
+  \ pw6b95
   \ pwpb95
   \ rhf
+  \ ri
+  \ ri-jk
+  \ ri-mp2
   \ rijcosx
+  \ rijk
+  \ rks
+  \ roks
+  \ scants
   \ slowconv
+  \ smallprint
   \ sp
+  \ sv
+  \ sv/j
+  \ svp
+  \ tightopt
   \ tightpno
   \ tightscf
+  \ tpss
   \ uks
+  \ uno
+  \ wb97m-d3bj
   \ wb97x
   \ xyzfile
 
