@@ -33,8 +33,8 @@ syn keyword orcaInputBlockVariable contained
   \ scale_init_displ
 syn match orcaInputBlockVariable /print *\[[^\[\]]*\]/ contained
 
-hi def link orcaInputBlockMarker Function
-hi def link orcaInputBlockVariable Identifier
+hi def link orcaInputBlockMarker Keyword
+hi def link orcaInputBlockVariable Function
 
 " Block Inside Input Block {{{
 syn region orcaBlockInsideInputBlock matchgroup=orcaInputBlockMarker start=/^ *\(constraints\|scan\)/ end=/^ *end$/ contained transparent
@@ -45,26 +45,26 @@ syn region orcaBlockInsideInputBlock matchgroup=orcaInputBlockMarker start=/^ *\
 " Global Variables {{{
 syn match orcaGlobalVariable /^%\(moinp\|maxcore\)/
 
-hi def link orcaGlobalVariable Identifier
+hi def link orcaGlobalVariable Function
 " }}}
 
 " Coordinate block {{{
 syn region orcaCoordBlock matchgroup=orcaCoordBlockMarker start=/^\* *\(xyz\|int\|internal\|gzmt\) / end=/^\*$/ transparent contains=orcaCoordBlockStart,orcaCoordBlockEnd,ocraCoordBlockElement
 syn keyword ocraCoordBlockElement H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe Cs Ba La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn Fr Ra Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr Rf Db Sg Bh Hs Mt Ds Rg Cn Nh Fl Mc Lv Ts Og contained
 
-hi def link orcaCoordBlockMarker Function
+hi def link orcaCoordBlockMarker Keyword
 hi def link ocraCoordBlockElement String
 " }}}
 
 " Coordinate external file {{{
 syn match orcaCoordExteranlFile /^\* \(xyz\|gzmt\)file/
 
-hi def link orcaCoordExteranlFile Function
+hi def link orcaCoordExteranlFile Keyword
 " }}}
 
 " Keyword Line {{{
 syn region orcaKeywordLine matchgroup=orcaKeywordLineMarker start=/^!/ end=/$/ transparent contains=orcaKeywordLineKeyword
-hi def link orcaKeywordLineMarker Function
+hi def link orcaKeywordLineMarker Keyword
 
 syn keyword orcaKeywordLineKeyword contained
   \ 6-311++g**
@@ -159,7 +159,7 @@ syn keyword orcaKeywordLineKeyword contained
   \ wb97x
   \ xyzfile
 
-hi def link orcaKeywordLineKeyword Identifier
+hi def link orcaKeywordLineKeyword Function
 " }}}
 
 " Comments {{{
@@ -171,4 +171,4 @@ hi def link orcaLineComment orcaComment
 hi def link orcaEmbeddedComment orcaComment
 " }}}
 
-let b:current_syntax = "gitconfig"
+let b:current_syntax = "orca"
